@@ -1,3 +1,9 @@
+
+<% if @word_found %>
 <h1><%= @answer %></h1>
-<h2><%= @calculated_time %></h2>
-<h2><%=  %></h2>
+<h2><%= @calculated_time.round %></h2>
+<h2><%= @calculated_score.round %></h2>
+<% else %>
+<h2>nope</h2>
+<% end %>
+
