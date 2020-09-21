@@ -1,0 +1,16 @@
+<div>
+  <div class="letters-container">
+    <% @letters.each do |letter| %>
+    <ul><li class="square"><%= letter %></li></ul>
+    <% end %>
+  </div>
+  <div class="form-container">
+    <form action="/score" method="post">
+      <input type="text" name="word" id="word">
+      <input type="submit" value="Submit!">
+      <%= hidden_field_tag :letters, @letters %>
+      <%= hidden_field_tag :time, Time.now %>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    </form>
+  </div>
+</div>
